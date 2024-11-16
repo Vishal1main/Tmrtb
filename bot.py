@@ -9,7 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Replace with your own Telegram Bot token
-TOKEN = os.getenv('TELEGRAM_TOKEN')
+TOKEN = os.getenv('7156757667:AAGveiJjxqSlANKXKaV5rAvZxP78y4_CQiI')
 PORT = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
