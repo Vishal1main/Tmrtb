@@ -8,8 +8,13 @@ import os
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Replace with your own Telegram Bot token
+# Fetch the Telegram bot token from environment variables
 TOKEN = os.getenv('7156757667:AAGveiJjxqSlANKXKaV5rAvZxP78y4_CQiI')
+
+# Check if the token is None or empty
+if not TOKEN:
+    raise ValueError("TELEGRAM_TOKEN environment variable is not set correctly.")
+
 PORT = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
@@ -60,4 +65,3 @@ def main():
 if __name__ == "__main__":
     main()
     app.run(host="0.0.0.0", port=PORT)
-    
